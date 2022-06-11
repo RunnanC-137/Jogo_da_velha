@@ -1,5 +1,6 @@
 const board = ['', '', '', '', '', '', '', '', '']
 const symbols = ["o", "x"]
+const computerPlayer = false
 
 const winStates = [
     [0,1,2],
@@ -29,9 +30,7 @@ function handleMove(position) {
         gameOver = isWin()
 
         if (!gameOver) {
-
-            playerTime == 0 ? playerTime = 1  : playerTime = 0
-            playerTime == 0 ? jogador.innerHTML = "Player &#x2B55" : jogador.innerHTML = "Player &#x274C"    
+            whoPlayer()
         }
 
         

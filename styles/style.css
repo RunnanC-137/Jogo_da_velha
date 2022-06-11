@@ -1,11 +1,15 @@
 *{
     margin: 0;
     padding: 0;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 body{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 h1 {
@@ -13,8 +17,11 @@ h1 {
 }
 
 .stage {
-    margin: 15px;  
+    display: grid;
+    grid-template: auto auto auto/ auto auto auto;
+    gap: 4px
 }
+
 .square {
     width: 100px;
     height: 100px;
@@ -24,26 +31,13 @@ h1 {
     box-sizing: border-box;
 }
 
-.o {
+.o, .x {
     position: relative;
+    text-align: center;
 }
 
-.o::after {
-    position: absolute;
-    font-size: 50px;
-    line-height: 100px;
-    content: "\2B55";
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
+.x::after, .o::after {
 
-.x {
-    position: relative;
-}
-
-.x::after {
     position: absolute;
     font-size: 50px;
     line-height: 100px;
@@ -53,6 +47,15 @@ h1 {
     right: 0;
     bottom: 0;
 }
+
+.o::after {
+    content: "\2B55";
+}
+
+.x::after {
+    content: "\274C";
+}
+
 
 button {
     background-color: transparent;
