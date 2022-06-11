@@ -1,6 +1,7 @@
 const jogador = document.querySelector(".jogador")
-const butao = document.querySelector(".button")
+const butao = document.querySelector(".butao")
 const stage = document.querySelector(".stage")
+
 
 window.onload = function() {
 
@@ -11,7 +12,7 @@ window.onload = function() {
         stage.appendChild(newSquare)
     }
 
-    const squares = document.querySelectorAll(".square")
+    let squares = document.querySelectorAll(".square")
 
     squares.forEach((square) => {
         square.addEventListener("click", handleClick)
@@ -21,30 +22,46 @@ window.onload = function() {
 
 function handleClick(element) {
 
+    
     let square = element.target;
+    let length = square.children.length
     let position = square.id
 
     if(handleMove(position)) {
-        setTimeout(() => {
-            playerTime == 0 ? jogador.innerHTML = "Player ⭕ venceu" : jogador.innerHTML = "Player ❌ venceu"
-            butao.classList.add("butao","recomecar")
-            butao.addEventListener("click", () => location.reload())
-        }, 10)
-        
+        whoWin(100)
+        butao.style.display = "flex"
+    } 
+    if(!length > 0) {
+        upDateSquare(`${position}`)
+        whoPlayer()
     }
-    
-    upDateSquare(`${position}`)
 }
 
 function upDateSquare(position) {
     let square = document.getElementById(position.toString())
-    let symbol = board[position]
-    square.innerHTML = `<div class="${symbol}"></div>`
-    
+    let symbol = document.createElement("div")
+    symbol.classList.add(`${board[position]}`)
+    square.appendChild(symbol)
 }
 
 function whoPlayer() {
 
     playerTime == 0 ? playerTime = 1  : playerTime = 0
     playerTime == 0 ? jogador.innerHTML = "Player &#x2B55" : jogador.innerHTML = "Player &#x274C" 
+}
+
+function whoWin(time) {
+
+    let squares = document.querySelectorAll(".square")
+    squares.forEach((square) => {
+        square.removeEventListener("click", handleClick)
+    })
+    setTimeout(() => {
+        playerTime == 0 ? jogador.innerHTML = "Player ⭕ venceu" : jogador.innerHTML = "Player ❌ venceu"
+
+    }, time)
+}
+
+function whichGame( ) {
+
 }

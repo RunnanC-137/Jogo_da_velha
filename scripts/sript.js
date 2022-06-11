@@ -28,12 +28,7 @@ function handleMove(position) {
         board[position] = symbols[playerTime]
 
         gameOver = isWin()
-
-        if (!gameOver) {
-            whoPlayer()
-        }
-
-        
+       
     }
 
     return gameOver
