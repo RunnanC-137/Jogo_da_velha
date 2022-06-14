@@ -2,7 +2,11 @@ button {
     background-color: transparent;
     border: none;
     outline: none;
-    color: transparent;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: row;
 }
 
 .butao {
@@ -25,8 +29,8 @@ button {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1;
-    margin: auto;
     padding: 1.2em 2.8em;
+    margin: 7pt;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;

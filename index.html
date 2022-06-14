@@ -11,15 +11,19 @@
 </head>
 <body>
     <div class="modo-de-jogo">
-        <div class="singleplayer">Single Player</div>
-        <div class="multiplayer">Multi Player</div>
+        <div class="singleplayer" onclick="singlePlayer()">Single Player</div>
+        <div class="multiplayer" onclick="selectGame()">Multi Player</div>
     </div>
-    <h1 class="title">Jogo da velha</h1>
+    <h1 class="title" style="display: none;">Jogo da velha</h1>
     <div class="stage">
     </div>
-    <h1 class="jogador">Player &#x2B55</h1>
-    <button class="butao" onclick="location.reload()">Recomecar</button>
+    <h1 class="jogador" style="display: none;">Player &#x2B55</h1>
 
+    <div class="botoes">
+        <button class="butao" onclick="reset()">Recomeçar</button>
+        <button class="butao" onclick="location.reload()">Trocar modo de jogo</button>
+    </div>
+        
     <div class="teste"></div>
 
     <script src="scripts/sript.js"></script>

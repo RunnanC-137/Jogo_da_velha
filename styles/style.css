@@ -1,15 +1,15 @@
 .jogador, .title, .square {
     margin: 15px;
-    display: none;
 }
 
 .stage {
-    display: grid;
+    display: none;
     grid-template: auto auto auto/ auto auto auto;
     gap: 4px
 }
 
 .square {
+
     width: 100px;
     margin: 0;
     height: 100px;
@@ -57,7 +57,7 @@
 .modo-de-jogo {
     justify-content: space-around;
 
-    width: 500px;
+    width: 520px;
     height: 500px;
     margin-top: 100px;
     background-color: #d9d5bb;

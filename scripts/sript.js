@@ -1,6 +1,8 @@
-const board = ['', '', '', '', '', '', '', '', '']
+let board = ['', '', '', '', '', '', '', '', '']
 const symbols = ["o", "x"]
-const computerPlayer = false
+
+let computerPlayer = false
+let theEnd = false
 let playerTime = 0
 
 const winStates = [
@@ -32,6 +34,8 @@ function handleMove(position) {
        
     }
 
+    
+
     return gameOver
 }
 
@@ -44,10 +48,10 @@ function isWin() {
         let p2 = sequencia[1]
         let p3 = sequencia[2]
 
-        if (board[p1] == board[p2] &&
-            board[p1] == board[p3] &&
+        if (board[p1] == board[p2] && 
+            board[p1] == board[p3] && 
             board[p1] != "") {
                 return true
-            }
+        }
     }
 }
