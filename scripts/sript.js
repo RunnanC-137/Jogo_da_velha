@@ -1,6 +1,7 @@
 const board = ['', '', '', '', '', '', '', '', '']
 const symbols = ["o", "x"]
 const computerPlayer = false
+let playerTime = 0
 
 const winStates = [
     [0,1,2],
@@ -15,7 +16,7 @@ const winStates = [
 
 let gameOver = false
 
-let playerTime = 0
+
 
 function handleMove(position) {
 

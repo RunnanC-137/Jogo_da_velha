@@ -25,13 +25,15 @@ function handleClick(element) {
     
     let square = element.target;
     let length = square.children.length
-    let position = square.id
-
-    if(handleMove(position)) {
-        whoWin(100)
-        butao.style.display = "flex"
-    } 
-    if(!length > 0) {
+    console.log(length)
+    if (length < 1) {
+        
+        let position = square.id
+    
+        if(handleMove(position)) {
+            whoWin(100)
+            butao.style.display = "flex"
+        } 
         upDateSquare(`${position}`)
         whoPlayer()
     }
@@ -57,11 +59,11 @@ function whoWin(time) {
         square.removeEventListener("click", handleClick)
     })
     setTimeout(() => {
-        playerTime == 0 ? jogador.innerHTML = "Player ⭕ venceu" : jogador.innerHTML = "Player ❌ venceu"
+        playerTime == 0 ? jogador.innerHTML = "Payer ❌ venceu" : jogador.innerHTML = "Player ⭕ venceu"
 
     }, time)
 }
 
-function whichGame( ) {
-
+function whichGame() {
+    
 }

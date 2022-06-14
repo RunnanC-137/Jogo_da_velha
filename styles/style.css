@@ -1,5 +1,6 @@
-h1 {
+.jogador, .title, .square {
     margin: 15px;
+    display: none;
 }
 
 .stage {
@@ -10,10 +11,10 @@ h1 {
 
 .square {
     width: 100px;
+    margin: 0;
     height: 100px;
     background-color: bisque;
     border: 1.5px solid gray;
-    display: inline-block;
     box-sizing: border-box;
 }
 
@@ -22,6 +23,7 @@ h1 {
     text-align: center;
     width: 100%;
     height: 100%;
+    pointer-events: none
 }
 
 .x::after, .o::after {
@@ -43,4 +45,41 @@ h1 {
 
 .x::after {
     content: "\274C";
+}
+
+.modo-de-jogo, .singleplayer, .multiplayer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modo-de-jogo {
+    justify-content: space-around;
+
+    width: 500px;
+    height: 500px;
+    margin-top: 100px;
+    background-color: #d9d5bb;
+
+    font-size: 24pt;
+    font-weight: lighter;
+
+    border-radius: 10px;
+}
+.singleplayer, .multiplayer {
+    
+
+    width: 200px;
+    height: 90px;
+    background-color: #b05574;
+    color: whitesmoke;
+    transition: all .5s;
+    border-radius: 15pt;
+    cursor: pointer;
+}
+
+.singleplayer:hover, .multiplayer:hover {
+    color: #b05574;
+    background-color: whitesmoke;
 }
