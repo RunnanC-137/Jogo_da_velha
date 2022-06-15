@@ -113,7 +113,9 @@ function computerChoice(){
 
 function reset() {
 
-    board = ['', '', '', '', '', '', '', '', '']
+    for (let i = 0; i < 9; i++) {
+        board[i] = ''
+    }
     theEnd = false
     playerTime = 0
     gameOver = false
